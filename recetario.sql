@@ -78,7 +78,11 @@ INSERT INTO categorias (nombre_categoria) VALUES
 ('Árabes'),
 ('Pescados y Mariscos'),
 ('Bebidas'),
-('Vegana');
+('Vegana'),
+-- arararara
+('Comida Vampírica'),
+('Comida Post-Apocalíptica'),
+('Comida Futurista');
 
 INSERT INTO usuarios (nombre_usuario, email, contraseña) VALUES
 ('AnaGomez', 'ana@example.com', 'contrasena123'),
@@ -90,7 +94,11 @@ INSERT INTO usuarios (nombre_usuario, email, contraseña) VALUES
 ('ElenaDiaz', 'elena@example.com', 'mypassword456'),
 ('DanielSantos', 'daniel@example.com', 'pass789'),
 ('ValeriaTorres', 'valeria@example.com', 'valepass321'),
-('FernandoCruz', 'fernando@example.com', 'ferpass654');
+('FernandoCruz', 'fernando@example.com', 'ferpass654'),
+-- aportacion epica de ara
+('BellaSwanFan', 'bella@twilight.com', 'luna123'), -- 11
+('DarylDixon01', 'daryl@twd.com', 'crossbow99'), -- 12
+('ShinjiPilot', 'shinji@eva.com', 'nerv2025'); -- 13
 
 INSERT INTO ingredientes (nombre_ingrediente) VALUES
 ('Harina'),
@@ -112,7 +120,13 @@ INSERT INTO ingredientes (nombre_ingrediente) VALUES
 ('Espinacas'),
 ('Café'),
 ('Chocolate'),
-('Fresas');
+('Fresas'),
+('Sangre artificial'),
+('Harina de trigo'),
+('Carne de conejo'),
+('Zanahorias salvajes'),
+('Gelatina roja'),
+('Fruta en conserva');
 
 INSERT INTO recetas (titulo, descripcion, tiempo_preparacion, imagen, id_categoria, id_usuario) VALUES
 ('Panqueques Saludables', 'Panqueques integrales bajos en azúcar.', 20, 'imagenes/panqueques.jpg', 1, 1),
@@ -124,14 +138,30 @@ INSERT INTO recetas (titulo, descripcion, tiempo_preparacion, imagen, id_categor
 ('Hummus Clásico', 'Crema árabe de garbanzos y aceite de oliva.', 15, 'imagenes/hummus.jpg', 7, 7),
 ('Ensalada Vegana', 'Ensalada fresca con aguacate y espinacas.', 12, 'imagenes/ensaladavegana.jpg', 10, 8),
 ('Sushi de Salmón', 'Sushi japonés clásico.', 50, 'imagenes/sushi.jpg', 2, 9),
-('Café Dalgona', 'Bebida coreana de café batido.', 5, 'imagenes/dalgona.jpg', 9, 10);
+('Café Dalgona', 'Bebida coreana de café batido.', 5, 'imagenes/dalgona.jpg', 9, 10),
+-- yo
+('Pastel de Sangre de Twilight', 'Un pastel oscuro inspirado en los vampiros de Forks.', 90,  'imagenes/bella.jpg', 11, 11),
+('Estofado de Conejo Estilo TWD', 'Una receta rústica para sobrevivir al apocalipsis zombie.', 120,  'imagenes/twd.jpg', 12, 12),
+('Pudín de Células Evangelion', 'Un postre misterioso inspirado en las experiencias en NERV.', 45, 'imagenes/eva.jpg', 13, 13);
 
 -- Panqueques Saludables
 INSERT INTO receta_ingredientes (id_receta, id_ingrediente, cantidad, unidad) VALUES
 (1, 1, '1', 'taza'),
 (1, 2, '2', 'cucharadas'),
 (1, 3, '1', 'unidad'),
-(1, 4, '1', 'taza');
+(1, 4, '1', 'taza'),
+-- xd
+-- Pastel de Sangre de Twilight
+(1, 1, '1', 'taza'),
+(1, 2, '2', 'tazas'),
+
+-- Estofado de Conejo Estilo TWD
+(2, 3, '500', 'gramos'),
+(2, 4, '3', 'unidades'),
+
+-- Pudín de Células Evangelion
+(3, 5, '1', 'sobre'),
+(3, 6, '1', 'lata');
 
 -- Pollo Teriyaki
 INSERT INTO receta_ingredientes (id_receta, id_ingrediente, cantidad, unidad) VALUES
@@ -198,7 +228,10 @@ INSERT INTO comentarios (id_receta, id_usuario, texto_comentario) VALUES
 (7, 8, 'Súper fácil de hacer y muy rico.'),
 (8, 9, 'Fresca y ligera, muy buena combinación.'),
 (9, 10, '¡Me encanta el sushi, excelente receta!'),
-(10, 1, 'Muy fácil de preparar, y delicioso.');
+(10, 1, 'Muy fácil de preparar, y delicioso.'),
+(11, 12, '¡Tenebrosamente delicioso! Me sentí como un verdadero Cullen.'),
+(12, 13, 'Perfecto para una cena al estilo supervivencia, como en Alexandria.'),
+(13, 11, 'Una textura misteriosa, digno de un experimento de NERV.');
 
 INSERT INTO evaluaciones (id_receta, id_usuario, estrellas) VALUES
 (1, 2, 5),
@@ -210,4 +243,7 @@ INSERT INTO evaluaciones (id_receta, id_usuario, estrellas) VALUES
 (7, 8, 5),
 (8, 9, 4),
 (9, 10, 5),
-(10, 1, 5);
+(10, 1, 5),
+(11, 12, 5), -- Daryl evaluando receta Twilight
+(12, 13, 4), -- Shinji evaluando receta TWD
+(33, 11, 5); -- Bella evaluando receta Evangelion
