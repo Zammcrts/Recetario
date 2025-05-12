@@ -78,7 +78,11 @@ INSERT INTO categorias (nombre_categoria) VALUES
 ('Árabes'),
 ('Pescados y Mariscos'),
 ('Bebidas'),
-('Vegana');
+('Vegana'),
+-- arararara
+('Comida Vampírica'),
+('Comida Post-Apocalíptica'),
+('Comida Futurista');
 
 INSERT INTO usuarios (nombre_usuario, email, contraseña) VALUES
 ('AnaGomez', 'ana@example.com', 'contrasena123'),
@@ -90,7 +94,11 @@ INSERT INTO usuarios (nombre_usuario, email, contraseña) VALUES
 ('ElenaDiaz', 'elena@example.com', 'mypassword456'),
 ('DanielSantos', 'daniel@example.com', 'pass789'),
 ('ValeriaTorres', 'valeria@example.com', 'valepass321'),
-('FernandoCruz', 'fernando@example.com', 'ferpass654');
+('FernandoCruz', 'fernando@example.com', 'ferpass654'),
+-- aportacion epica de ara
+('BellaSwanFan', 'bella@twilight.com', 'luna123'), -- 11
+('DarylDixon01', 'daryl@twd.com', 'crossbow99'), -- 12
+('ShinjiPilot', 'shinji@eva.com', 'nerv2025'); -- 13
 
 INSERT INTO ingredientes (nombre_ingrediente) VALUES
 ('Harina'),
@@ -112,81 +120,108 @@ INSERT INTO ingredientes (nombre_ingrediente) VALUES
 ('Espinacas'),
 ('Café'),
 ('Chocolate'),
-('Fresas');
+('Fresas'),
+('Sangre artificial'),
+('Harina de trigo'),
+('Carne de conejo'),
+('Zanahorias salvajes'),
+('Gelatina roja'),
+('Fruta en conserva');
 
 INSERT INTO recetas (titulo, descripcion, tiempo_preparacion, imagen, id_categoria, id_usuario) VALUES
-('Panqueques Saludables', 'Panqueques integrales bajos en azúcar.', 20, 'imagenes/panqueques.jpg', 1, 1),
-('Pollo Teriyaki', 'Pollo estilo japonés con salsa teriyaki.', 35, 'imagenes/teriyaki.jpg', 2, 2),
-('Tarta de Limón', 'Tarta dulce y refrescante para postres.', 45, 'imagenes/tartalimon.jpg', 3, 3),
-('Tacos de Pescado', 'Tacos mexicanos de pescado con limón.', 25, 'imagenes/tacospescado.jpg', 4, 4),
-('Pizza Margarita', 'Pizza italiana con tomate y albahaca.', 30, 'imagenes/pizza.jpg', 5, 5),
-('Smoothie de Fresa', 'Bebida saludable a base de fresas.', 10, 'imagenes/smoothiefresa.jpg', 9, 6),
-('Hummus Clásico', 'Crema árabe de garbanzos y aceite de oliva.', 15, 'imagenes/hummus.jpg', 7, 7),
-('Ensalada Vegana', 'Ensalada fresca con aguacate y espinacas.', 12, 'imagenes/ensaladavegana.jpg', 10, 8),
-('Sushi de Salmón', 'Sushi japonés clásico.', 50, 'imagenes/sushi.jpg', 2, 9),
-('Café Dalgona', 'Bebida coreana de café batido.', 5, 'imagenes/dalgona.jpg', 9, 10);
+('Panqueques Saludables', 'Mezcla harina, azúcar, huevo y leche hasta obtener una masa uniforme. Cocina en una sartén antiadherente por ambos lados hasta dorar.', 20, 'C:\Users\samco\Documents\Recetario\imagenes\hotcakes.jpg', 1, 1),
+('Pollo Teriyaki', 'Cocina el pollo en un sartén. Añade salsa de soya y arroz cocido. Deja reducir hasta que espese y sirve caliente.', 35, 'C:\Users\samco\Documents\Recetario\imagenes\teriyaky.jpg', 2, 2),
+('Tarta de Limón', 'Prepara la base con harina y mantequilla, hornea. Mezcla limón, azúcar y huevos para el relleno. Hornea de nuevo y refrigera.', 45, 'C:\Users\samco\Documents\Recetario\imagenes\limon.jpg', 3, 3),
+('Tacos de Pescado', 'Cocina el pescado con limón y aceite de oliva. Sirve en tortillas calientes con tus toppings favoritos.', 25, 'C:\Users\samco\Documents\Recetario\imagenes\pescado.jpg', 4, 4),
+('Pizza Margarita', 'Extiende la masa, añade tomate en rodajas, albahaca y un toque de aceite de oliva. Hornea hasta que la masa esté crujiente.', 30, 'C:\Users\samco\Documents\Recetario\imagenes\pizza.jpg', 5, 5),
+('Smoothie de Fresa', 'Licúa las fresas con leche y un poco de azúcar hasta obtener una mezcla cremosa. Sirve frío.', 10, 'C:\Users\samco\Documents\Recetario\imagenes\fresa.jpg', 9, 6),
+('Hummus Clásico', 'Tritura los garbanzos cocidos con aceite de oliva y jugo de limón hasta lograr una crema suave.', 15, 'C:\Users\samco\Documents\Recetario\imagenes\hummus.jpeg', 7, 7),
+('Ensalada Vegana', 'Corta el aguacate y pepino. Mezcla con espinacas frescas y aliña al gusto.', 12, 'C:\Users\samco\Documents\Recetario\imagenes\ensalada.jpg', 10, 8),
+('Sushi de Salmón', 'Cocina el arroz, enfría y adereza. Enrolla con salmón y un poco de salsa de soya.', 50, 'C:\Users\samco\Documents\Recetario\imagenes\sushi.jpg', 2, 9),
+('Café Dalgona', 'Bate café instantáneo, azúcar y agua caliente hasta que espese. Sirve sobre leche fría o caliente.', 5, 'C:\Users\samco\Documents\Recetario\imagenes\cafe.jpg', 9, 10),
+('Pastel de Sangre de Twilight', 'Prepara una mezcla con harina y azúcar teñida con gelatina roja. Hornea en molde y decora con fruta en conserva y "sangre artificial".', 90, 'C:\Users\samco\Documents\Recetario\imagenes\Pastel-Twilight.jpeg', 11, 11),
+('Estofado de Conejo Estilo TWD', 'Sella la carne de conejo, añade zanahorias y agua. Cocina a fuego lento hasta que la carne esté tierna. Ideal para sobrevivientes.', 120, 'C:\Users\samco\Documents\Recetario\imagenes\estofado.jpg', 12, 12),
+('Pudín de Células Evangelion', 'Disuelve la gelatina roja en agua caliente y mezcla con fruta en conserva. Refrigera hasta que cuaje. No garantizamos efectos secundarios.', 45, 'C:\Users\samco\Documents\Recetario\imagenes\rei.jpeg', 13, 13);
 
--- Panqueques Saludables
+-- 1. Panqueques Saludables
 INSERT INTO receta_ingredientes (id_receta, id_ingrediente, cantidad, unidad) VALUES
-(1, 1, '1', 'taza'),
-(1, 2, '2', 'cucharadas'),
-(1, 3, '1', 'unidad'),
-(1, 4, '1', 'taza');
+(1, 1, '1', 'taza'), -- Harina
+(1, 2, '2', 'cucharadas'), -- Azúcar
+(1, 3, '1', 'unidad'), -- Huevo
+(1, 4, '1', 'taza'); -- Leche
 
--- Pollo Teriyaki
+-- 2. Pollo Teriyaki
 INSERT INTO receta_ingredientes (id_receta, id_ingrediente, cantidad, unidad) VALUES
-(2, 6, '300', 'gramos'),
-(2, 8, '3', 'cucharadas'),
-(2, 7, '1', 'taza');
+(2, 6, '300', 'gramos'), -- Pollo
+(2, 8, '3', 'cucharadas'), -- Salsa de soya
+(2, 7, '1', 'taza'); -- Arroz
 
--- Tarta de Limón
+-- 3. Tarta de Limón
 INSERT INTO receta_ingredientes (id_receta, id_ingrediente, cantidad, unidad) VALUES
-(3, 1, '1.5', 'tazas'),
-(3, 2, '3/4', 'taza'),
-(3, 12, '2', 'unidades'),
-(3, 5, '100', 'gramos');
+(3, 1, '1.5', 'tazas'), -- Harina
+(3, 2, '3/4', 'taza'), -- Azúcar
+(3, 12, '2', 'unidades'), -- Limón
+(3, 5, '100', 'gramos'); -- Mantequilla
 
--- Tacos de Pescado
+-- 4. Tacos de Pescado
 INSERT INTO receta_ingredientes (id_receta, id_ingrediente, cantidad, unidad) VALUES
-(4, 11, '200', 'gramos'),
-(4, 12, '1', 'unidad'),
-(4, 13, '2', 'cucharadas');
+(4, 11, '200', 'gramos'), -- Pescado
+(4, 12, '1', 'unidad'), -- Limón
+(4, 13, '2', 'cucharadas'); -- Aceite de oliva
 
--- Pizza Margarita
+-- 5. Pizza Margarita
 INSERT INTO receta_ingredientes (id_receta, id_ingrediente, cantidad, unidad) VALUES
-(5, 9, '3', 'unidades'),
-(5, 10, '0.5', 'taza'),
-(5, 13, '1', 'cucharada');
+(5, 9, '3', 'unidades'), -- Tomate
+(5, 10, '0.5', 'taza'), -- Albahaca
+(5, 13, '1', 'cucharada'); -- Aceite de oliva
 
--- Smoothie de Fresa
+-- 6. Smoothie de Fresa
 INSERT INTO receta_ingredientes (id_receta, id_ingrediente, cantidad, unidad) VALUES
-(6, 20, '1', 'taza'),
-(6, 4, '1', 'taza'),
-(6, 2, '1', 'cucharada');
+(6, 20, '1', 'taza'), -- Fresas
+(6, 4, '1', 'taza'), -- Leche
+(6, 2, '1', 'cucharada'); -- Azúcar
 
--- Hummus Clásico
+-- 7. Hummus Clásico
 INSERT INTO receta_ingredientes (id_receta, id_ingrediente, cantidad, unidad) VALUES
-(7, 15, '1', 'taza'),
-(7, 13, '2', 'cucharadas'),
-(7, 12, '1', 'unidad');
+(7, 15, '1', 'taza'), -- Garbanzos
+(7, 13, '2', 'cucharadas'), -- Aceite de oliva
+(7, 12, '1', 'unidad'); -- Limón
 
--- Ensalada Vegana
+-- 8. Ensalada Vegana
 INSERT INTO receta_ingredientes (id_receta, id_ingrediente, cantidad, unidad) VALUES
-(8, 14, '1', 'unidad'),
-(8, 16, '0.5', 'unidad'),
-(8, 17, '1', 'taza');
+(8, 14, '1', 'unidad'), -- Aguacate
+(8, 16, '0.5', 'unidad'), -- Pepino
+(8, 17, '1', 'taza'); -- Espinacas
 
--- Sushi de Salmón
+-- 9. Sushi de Salmón
 INSERT INTO receta_ingredientes (id_receta, id_ingrediente, cantidad, unidad) VALUES
-(9, 7, '2', 'tazas'),
-(9, 11, '200', 'gramos'),
-(9, 8, '2', 'cucharadas');
+(9, 7, '2', 'tazas'), -- Arroz
+(9, 11, '200', 'gramos'), -- Pescado (salmón)
+(9, 8, '2', 'cucharadas'); -- Salsa de soya
 
--- Café Dalgona
+-- 10. Café Dalgona
 INSERT INTO receta_ingredientes (id_receta, id_ingrediente, cantidad, unidad) VALUES
-(10, 18, '2', 'cucharadas'),
-(10, 2, '2', 'cucharadas'),
-(10, 4, '1', 'taza');
+(10, 18, '2', 'cucharadas'), -- Café
+(10, 2, '2', 'cucharadas'), -- Azúcar
+(10, 4, '1', 'taza'); -- Leche
+
+-- 11. Pastel de Sangre de Twilight
+INSERT INTO receta_ingredientes (id_receta, id_ingrediente, cantidad, unidad) VALUES
+(11, 1, '1', 'taza'), -- Harina
+(11, 2, '2', 'tazas'), -- Azúcar
+(11, 25, '1', 'sobre'), -- Gelatina roja
+(11, 26, '1', 'lata'), -- Fruta en conserva
+(11, 21, '2', 'cucharadas'); -- Sangre artificial
+
+-- 12. Estofado de Conejo Estilo TWD
+INSERT INTO receta_ingredientes (id_receta, id_ingrediente, cantidad, unidad) VALUES
+(12, 23, '500', 'gramos'), -- Carne de conejo
+(12, 24, '3', 'unidades'); -- Zanahorias salvajes
+
+-- 13. Pudín de Células Evangelion
+INSERT INTO receta_ingredientes (id_receta, id_ingrediente, cantidad, unidad) VALUES
+(13, 25, '1', 'sobre'), -- Gelatina roja
+(13, 26, '1', 'lata'); -- Fruta en conserva
 
 INSERT INTO comentarios (id_receta, id_usuario, texto_comentario) VALUES
 (1, 2, 'Muy ricos para un desayuno rápido.'),
@@ -198,7 +233,10 @@ INSERT INTO comentarios (id_receta, id_usuario, texto_comentario) VALUES
 (7, 8, 'Súper fácil de hacer y muy rico.'),
 (8, 9, 'Fresca y ligera, muy buena combinación.'),
 (9, 10, '¡Me encanta el sushi, excelente receta!'),
-(10, 1, 'Muy fácil de preparar, y delicioso.');
+(10, 1, 'Muy fácil de preparar, y delicioso.'),
+(11, 12, '¡Tenebrosamente delicioso! Me sentí como un verdadero Cullen.'),
+(12, 13, 'Perfecto para una cena al estilo supervivencia, como en Alexandria.'),
+(13, 11, 'Una textura misteriosa, digno de un experimento de NERV.');
 
 INSERT INTO evaluaciones (id_receta, id_usuario, estrellas) VALUES
 (1, 2, 5),
@@ -210,4 +248,7 @@ INSERT INTO evaluaciones (id_receta, id_usuario, estrellas) VALUES
 (7, 8, 5),
 (8, 9, 4),
 (9, 10, 5),
-(10, 1, 5);
+(10, 1, 5),
+(11, 12, 5), -- Daryl evaluando receta Twilight
+(12, 13, 4), -- Shinji evaluando receta TWD
+(13, 11, 5); -- Bella evaluando receta Evangelion

@@ -17,9 +17,9 @@ FUENTE = "Century Gothic"
 def conectar_db():
     return psycopg2.connect(
         host="localhost",
-        database="pruebatontaR",
+        database="recetas",
         user="postgres",
-        password="-"
+        password="TheM4ilMan05"
     )
 
 # Ventana principal
@@ -135,7 +135,7 @@ def mostrar_categorias():
 
     ventana = tk.Toplevel(app)
     ventana.title("Categorías de Recetas")
-    ventana.geometry("600x700")
+    ventana.geometry("600x950")
     ventana.configure(bg=COLOR_FONDO)
 
     def restaurar():
@@ -546,7 +546,7 @@ def agregar_receta():
     entry_cantidad = tk.Entry(frame_ing, width=10, font=(FUENTE, 14))
     entry_cantidad.grid(row=1, column=1, padx=5)
 
-    unidades_frecuentes = ["pz", "ml", "gr", "kg", "lb", "oz", "c/c", "taza", "c/s","L"]
+    unidades_frecuentes = ["pieza", "mililitros", "gramos", "kilogramos", "libras", "onzas", "cucharadas", "tazas", "cucharaditas","litro"]
     unidad_var = tk.StringVar(value=unidades_frecuentes[0])
     dropdown_unidad = ctk.CTkOptionMenu(frame_ing, values=unidades_frecuentes, variable=unidad_var, width=100, font=(FUENTE, 14))
     dropdown_unidad.grid(row=1, column=2, padx=5)
