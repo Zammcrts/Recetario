@@ -1,15 +1,16 @@
+--se crea la tabla usuarios
 CREATE TABLE usuarios (
     id_usuario SERIAL PRIMARY KEY,
     nombre_usuario VARCHAR(100) NOT NULL,
     email VARCHAR(100) UNIQUE NOT NULL,
     contraseña VARCHAR(100) NOT NULL
 );
-
+--se crea la tabla categorias
 CREATE TABLE categorias (
     id_categoria SERIAL PRIMARY KEY,
     nombre_categoria VARCHAR(100) NOT NULL UNIQUE
 );
-
+--se crea la tabla recetar
 CREATE TABLE recetas (
     id_receta SERIAL PRIMARY KEY,
     titulo VARCHAR(150) NOT NULL,
@@ -22,12 +23,12 @@ CREATE TABLE recetas (
     FOREIGN KEY (id_categoria) REFERENCES categorias(id_categoria),
     FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario)
 );
-
+--se crea la tabla ingredientes
 CREATE TABLE ingredientes (
     id_ingrediente SERIAL PRIMARY KEY,
     nombre_ingrediente VARCHAR(100) NOT NULL UNIQUE
 );
-
+--tabla que relaciona receta e ingredientes
 CREATE TABLE receta_ingredientes (
     id_receta INT NOT NULL,
     id_ingrediente INT NOT NULL,
@@ -37,7 +38,7 @@ CREATE TABLE receta_ingredientes (
     FOREIGN KEY (id_receta) REFERENCES recetas(id_receta),
     FOREIGN KEY (id_ingrediente) REFERENCES ingredientes(id_ingrediente)
 );
-
+--se crea la tabla comentarios
 CREATE TABLE comentarios (
     id_comentario SERIAL PRIMARY KEY,
     id_receta INT NOT NULL,
@@ -47,7 +48,7 @@ CREATE TABLE comentarios (
     FOREIGN KEY (id_receta) REFERENCES recetas(id_receta),
     FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario)
 );
-
+--se crear la tabla evaluaciones
 CREATE TABLE evaluaciones (
     id_evaluacion SERIAL PRIMARY KEY,
     id_receta INT NOT NULL,
@@ -58,7 +59,7 @@ CREATE TABLE evaluaciones (
     FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario),
     UNIQUE (id_receta, id_usuario) -- cada usuario solo puede evaluar una vez cada receta
 );
-
+--tabla de recetas guardadas
 CREATE TABLE recetas_guardadas (
     id_usuario INT NOT NULL,
     id_receta INT NOT NULL,
@@ -68,6 +69,7 @@ CREATE TABLE recetas_guardadas (
     FOREIGN KEY (id_receta) REFERENCES recetas(id_receta)
 );
 
+--se insertan las categorias
 INSERT INTO categorias (nombre_categoria) VALUES
 ('Saludable'),
 ('Asiáticas'),
@@ -83,7 +85,7 @@ INSERT INTO categorias (nombre_categoria) VALUES
 ('Comida Vampírica'),
 ('Comida Post-Apocalíptica'),
 ('Comida Futurista');
-
+-- se insertan los usuarios
 INSERT INTO usuarios (nombre_usuario, email, contraseña) VALUES
 ('AnaGomez', 'ana@example.com', 'contrasena123'),
 ('LuisPerez', 'luis@example.com', 'miclave456'),
@@ -100,6 +102,7 @@ INSERT INTO usuarios (nombre_usuario, email, contraseña) VALUES
 ('DarylDixon01', 'daryl@twd.com', 'crossbow99'), -- 12
 ('ShinjiPilot', 'shinji@eva.com', 'nerv2025'); -- 13
 
+--se insertan ingredientes
 INSERT INTO ingredientes (nombre_ingrediente) VALUES
 ('Harina'),
 ('Azúcar'),
@@ -128,6 +131,7 @@ INSERT INTO ingredientes (nombre_ingrediente) VALUES
 ('Gelatina roja'),
 ('Fruta en conserva');
 
+--se insertan las recetas
 INSERT INTO recetas (titulo, descripcion, tiempo_preparacion, imagen, id_categoria, id_usuario) VALUES
 ('Panqueques Saludables', 'Mezcla harina, azúcar, huevo y leche hasta obtener una masa uniforme. Cocina en una sartén antiadherente por ambos lados hasta dorar.', 20, 'C:\Users\samco\Documents\Recetario\imagenes\hotcakes.jpg', 1, 1),
 ('Pollo Teriyaki', 'Cocina el pollo en un sartén. Añade salsa de soya y arroz cocido. Deja reducir hasta que espese y sirve caliente.', 35, 'C:\Users\samco\Documents\Recetario\imagenes\teriyaky.jpg', 2, 2),
@@ -223,6 +227,7 @@ INSERT INTO receta_ingredientes (id_receta, id_ingrediente, cantidad, unidad) VA
 (13, 25, '1', 'sobre'), -- Gelatina roja
 (13, 26, '1', 'lata'); -- Fruta en conserva
 
+--se insertan comentarios
 INSERT INTO comentarios (id_receta, id_usuario, texto_comentario) VALUES
 (1, 2, 'Muy ricos para un desayuno rápido.'),
 (2, 3, 'El pollo quedó jugoso y muy sabroso.'),
@@ -238,6 +243,7 @@ INSERT INTO comentarios (id_receta, id_usuario, texto_comentario) VALUES
 (12, 13, 'Perfecto para una cena al estilo supervivencia, como en Alexandria.'),
 (13, 11, 'Una textura misteriosa, digno de un experimento de NERV.');
 
+--se insertan las evaluaciones
 INSERT INTO evaluaciones (id_receta, id_usuario, estrellas) VALUES
 (1, 2, 5),
 (2, 3, 4),
